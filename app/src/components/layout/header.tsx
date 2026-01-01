@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Brain, Menu, Moon, Sun, Globe, User, LogOut } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Select,
