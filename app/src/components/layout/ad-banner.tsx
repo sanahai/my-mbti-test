@@ -15,7 +15,7 @@ export default function AdBanner({
   style,
   className = ""
 }: AdBannerProps) {
-  const isDevelopment = import.meta.env.MODE === 'development';
+  const isDevelopment = process.env.NODE_ENV === 'development';
 
   return (
     <div className="w-full bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
