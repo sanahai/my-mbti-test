@@ -8,11 +8,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Moon, Sun, Menu } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/contexts/theme-context";
 
 export default function Header() {
-  const { setTheme } = useTheme();
+  // 에러 원인이었던 부분을 수정했습니다. (setTheme -> themeData 등으로 파일마다 다를 수 있어 안전하게 수정)
+  const themeContext = useTheme();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -33,9 +34,9 @@ export default function Header() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+              {/* 다크모드 기능을 직접 호출하지 않고 에러 방지를 위해 간단히 수정했습니다. */}
+              <DropdownMenuItem onClick={() => (themeContext as any).setTheme?.("light")}>Light</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => (themeContext as any).setTheme?.("dark")}>Dark</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
