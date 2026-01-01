@@ -113,7 +113,7 @@ export default function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent side="right">
               <div className="flex flex-col space-y-4 mt-8">
                 {navigation.map((item) => (
                   <Link key={item.name} href={item.href}>
